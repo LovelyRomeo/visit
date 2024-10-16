@@ -1,0 +1,303 @@
+@import url("https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,900");
+@import url("fontawesome-all.min.css");
+
+* {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font: inherit;
+	vertical-align: baseline;}
+
+
+body {
+	display: block;
+	background: #fff;
+	color: #fff;
+	font-family: 'Source Sans Pro';
+}
+
+.is-preload {
+  overflow: hidden;
+}
+
+.loading-container {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 2%;
+  z-index: 1;
+  opacity: 1;
+  transition: opacity 0.5s ease-in-out;
+}
+
+.loading-spinner {
+  width: 40px;
+  height: 40px;
+  border: 5px solid #fff;
+  border-top-color: transparent;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.is-preload .loading-container {
+  display: flex;
+}
+
+.is-preload .loading-container.hide {
+  opacity: 0;
+  pointer-events: none;
+}
+
+
+
+#header a {
+	color: #fff;
+	outline: 0;
+	text-decoration: none;
+}
+
+
+.icon:before {
+	font-family: 'Font Awesome 5 Free';
+	font-weight: 400;
+}
+
+
+.icon.brands:before {
+	font-family: 'Font Awesome 5 Brands';
+}
+
+
+#bg {
+	animation: bg 60s linear infinite;
+	background: #021e2b url("images/i.webp") bottom left;
+	background-repeat: repeat-x;
+	height: 100%;
+	opacity: 1;
+	position: fixed;
+}
+
+@keyframes bg {
+	0% {
+		transform: translatex(0);
+	}
+
+	100% {
+		transform: translatex(-2250px);
+	}
+}
+
+#bg {
+	background-size: 2250px auto;
+	width: 6750px;
+}
+
+@keyframes overlay {
+	0% {
+		opacity: 0;
+	}
+
+	100% {
+		opacity: 1;
+	}
+}
+
+#overlay {
+	animation: overlay 1.5s 1.5s forwards;
+	background-attachment: fixed;
+	background-image: url("images/overlay.svg");
+	background-position: left;
+	background-repeat: no-repeat;
+	background-size: cover;
+	height: 100%;
+	opacity: 0;
+	position: fixed;
+	width: 100%;
+	}
+
+#main {
+	width: 100%;
+	position: fixed;
+	left: 5%;
+	top: 33%;
+}
+
+
+@keyframes header {
+	0% {
+		opacity: 0;
+	}
+
+	100% {
+		opacity: 1;
+	}
+}
+
+@keyframes nav-icons {
+	0% {
+		opacity: 0;
+	}
+
+	100% {
+		opacity: 1;
+	}
+}
+
+#header {
+	animation: header 1s 2.25s forwards;
+	cursor: default;
+	display: inline-block;
+	opacity: 0;
+	position: relative;
+	text-align: center;
+	width: 90%;
+}
+
+#header h1 {
+	font-size: 4.35em;
+	font-weight: 900;
+	letter-spacing: -0.035em;
+	line-height: 1em;
+}
+
+#header p {
+	font-size: 1.25em;
+	margin: 0.75em 0 0.25em 0;
+}
+
+#header nav {
+	margin: 1.5em 0 0 0;
+}
+
+#header nav li {
+	animation: nav-icons 0.5s ease-in-out forwards;
+	display: inline-block;
+	height: 5.35em;
+	line-height: 5.885em;
+	opacity: 0;
+	width: 5.35em;
+}
+
+#header nav li:nth-child(n) {
+	animation-delay: 2.5s;
+}
+
+#header nav a {
+	display: inline-block;
+}
+
+#header nav a:before {
+	transition: all 0.2s ease-in-out;
+	border-radius: 100%;
+	border: solid 1px #fff;
+	display: block;
+	font-size: 1.75em;
+	height: 2.5em;
+	line-height: 2.5em;
+	width: 2.5em;
+}
+
+#header nav a:hover {
+	font-size: 1.1em;
+}
+
+#header nav a:hover:before {
+	background-color: rgba(255, 255, 255, 0.175)
+}
+
+#header nav a:active {
+	font-size: 0.95em;
+}
+
+#header nav a:active:before {
+	background-color: rgba(255, 255, 255, 0.35);
+}
+
+@media screen and (max-width: 1680px) {
+	body{
+		font-size: 13pt;
+	}
+
+	@keyframes bg {
+		0% {
+			transform: translateX(0);
+		}
+
+		100% {
+			transform: translateX(-1500px);
+		}
+	}
+}
+
+@media screen and (max-width: 1280px) {
+	body{
+		font-size: 12pt;
+	}
+
+	@keyframes bg {
+		0% {
+			transform: translateX(0);
+		}
+
+		100% {
+			transform: translateX(-750px);
+		}
+	}
+}
+
+@media screen and (max-width: 736px) {
+	body {
+		min-width: 320px;
+		font-size: 11pt;
+		}
+
+	@keyframes bg {
+		0% {
+			transform: translatex(0,0,0);
+		}
+
+		100% {
+			transform: translatex(-300px);
+		}
+		}
+
+	#header h1 {
+		font-size: 2.5em;
+	}
+
+	#header p {
+		font-size: 1em;
+	}
+
+	#header nav {
+		font-size: 1em;
+	}
+
+	#header nav a:hover {
+			font-size: 1em;
+	}
+
+	#header nav a:active {
+			font-size: 1em;
+	}
+}
+@media screen and (max-width: 480px) {
+	@keyframes bg {
+		0% {
+			transform: translatex(0);
+		}
+
+		100% {
+			transform: translatex(-412.5px);
+		}
+	}
+}
